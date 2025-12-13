@@ -672,11 +672,28 @@
   
   /* کاهش ارتفاع header در موبایل */
   #header .branding {
-    padding: 10px 0 !important;
+    padding: 12px 0 !important;
+    min-height: auto !important;
   }
   
   #header .branding > div {
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  
+  /* تنظیم فاصله منو در موبایل */
+  #header .navmenu {
+    margin-top: 8px !important;
+    width: 100% !important;
+    order: 3 !important;
+  }
+  
+  #header .logo {
+    order: 1 !important;
+  }
+  
+  #header .cta-btn {
+    order: 2 !important;
   }
   
   /* بهبود layout header در موبایل */
