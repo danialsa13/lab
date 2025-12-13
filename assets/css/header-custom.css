@@ -189,34 +189,49 @@
   padding: 0;
 }
 
-/* استایل موبایل - منو افقی و قابل مشاهده */
+/* استایل موبایل - منو در همان خط header */
 @media (max-width: 1199px) {
+  #header .branding > div {
+    flex-wrap: nowrap !important;
+  }
+  
   #header .navmenu {
     display: flex !important;
     flex: 1 !important;
     justify-content: center !important;
+    min-width: 0 !important;
   }
   
   #header .navmenu ul {
     display: flex !important;
     flex-direction: row !important;
-    gap: 5px !important;
+    gap: 3px !important;
     padding: 0 !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     justify-content: center !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  
+  #header .navmenu ul::-webkit-scrollbar {
+    display: none !important;
   }
   
   #header .navmenu ul li {
     display: inline-block !important;
     width: auto !important;
+    flex: 0 0 auto !important;
   }
   
   #header .navmenu ul li a {
-    padding: 8px 14px !important;
+    padding: 6px 10px !important;
     border-radius: 20px !important;
     width: auto !important;
     justify-content: center !important;
-    font-size: 13px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
   }
   
   #header .navmenu ul li a::after {
@@ -224,7 +239,7 @@
   }
   
   #header .navmenu ul li a:hover {
-    transform: translateY(-2px) !important;
+    transform: translateY(-1px) !important;
   }
 }
 

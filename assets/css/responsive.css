@@ -213,20 +213,32 @@
     font-size: 13px !important;
   }
   
-  /* Header */
+  /* Header در موبایل کوچک */
   #header .branding {
     min-height: auto !important;
-    padding: 10px 0 8px 0 !important;
+    padding: 8px 0 !important;
   }
   
-  #header .navmenu {
-    margin-top: 8px !important;
-    margin-bottom: 6px !important;
+  #header .logo {
+    max-width: 120px !important;
+  }
+  
+  #header .logo .sitename {
+    font-size: 14px !important;
+  }
+  
+  #header .logo > div > div:first-child {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  
+  #header .logo > div > div:first-child i {
+    font-size: 16px !important;
   }
   
   #header .navmenu ul li a {
-    padding: 7px 12px !important;
-    font-size: 12px !important;
+    padding: 5px 8px !important;
+    font-size: 10px !important;
   }
   
   /* Hero Section در موبایل کوچک */
@@ -677,48 +689,78 @@
   
   /* کاهش ارتفاع header در موبایل */
   #header .branding {
-    padding: 12px 0 !important;
+    padding: 10px 0 !important;
     min-height: auto !important;
   }
   
   #header .branding > div {
-    flex-wrap: wrap !important;
-    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
   }
   
-  /* تنظیم فاصله منو در موبایل */
-  #header .navmenu {
-    margin-top: 8px !important;
-    width: 100% !important;
-    order: 3 !important;
-  }
-  
-  #header .logo {
-    order: 1 !important;
-  }
-  
-  #header .cta-btn {
-    order: 2 !important;
-  }
-  
-  /* بهبود layout header در موبایل */
+  /* بهبود layout header در موبایل - منو در همان خط */
   #header .branding > div {
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     align-items: center !important;
+    gap: 8px !important;
   }
   
   #header .logo {
     flex: 0 0 auto !important;
     margin-left: 0 !important;
+    max-width: 140px !important;
+  }
+  
+  #header .logo .sitename {
+    font-size: 16px !important;
+  }
+  
+  #header .logo p {
+    font-size: 9px !important;
+  }
+  
+  #header .logo > div > div:first-child {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  
+  #header .logo > div > div:first-child i {
+    font-size: 18px !important;
   }
   
   #header .navmenu {
     flex: 1 !important;
     min-width: 0 !important;
-    margin: 0 10px !important;
+    margin: 0 5px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  #header .navmenu ul {
+    gap: 3px !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    padding: 0 5px !important;
+  }
+  
+  #header .navmenu ul::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  #header .navmenu ul li a {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
   }
   
   #header .cta-btn {
+    display: none !important;
+  }
+  
+  #header .branding > div > div:last-child {
     display: none !important;
   }
   
