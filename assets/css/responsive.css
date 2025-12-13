@@ -5,14 +5,23 @@
   display: none !important;
 }
 
-/* منوی پایین صفحه - همیشه مخفی */
+/* منوی پایین صفحه - مخفی در دسکتاپ */
 .mobile-bottom-nav {
   display: none !important;
 }
 
-/* مخفی کردن دکمه mobile menu toggle */
+/* نمایش منوی پایین صفحه در موبایل */
 @media (max-width: 1199px) {
+  .mobile-bottom-nav {
+    display: flex !important;
+  }
+  
   .mobile-nav-toggle {
+    display: none !important;
+  }
+  
+  /* مخفی کردن منوی header در موبایل */
+  #header .navmenu {
     display: none !important;
   }
 }
@@ -508,11 +517,9 @@
     flex: 1 !important;
   }
   
-  /* منوی ناوبری در موبایل - همیشه قابل مشاهده */
+  /* منوی ناوبری در موبایل - مخفی (منوی پایین صفحه استفاده می‌شود) */
   #header .navmenu {
-    display: flex !important;
-    flex: 1 !important;
-    justify-content: center !important;
+    display: none !important;
   }
   
   #header .navmenu ul {
@@ -575,7 +582,7 @@
   /* فاصله بین header و محتوا */
   main.main {
     padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-bottom: 70px !important; /* فاصله برای bottom navigation */
   }
   
   section.section {
@@ -728,7 +735,7 @@
     gap: 5px !important;
   }
   
-  /* بهبود layout header در موبایل - منو در همان خط */
+  /* بهبود layout header در موبایل - فقط logo نمایش داده می‌شود */
   #header .branding > div {
     flex-wrap: nowrap !important;
     align-items: center !important;
@@ -738,61 +745,27 @@
   #header .logo {
     flex: 0 0 auto !important;
     margin-left: 0 !important;
-    max-width: 140px !important;
   }
   
   #header .logo .sitename {
-    font-size: 16px !important;
-  }
-  
-  #header .logo p {
-    font-size: 9px !important;
-  }
-  
-  #header .logo > div > div:first-child {
-    width: 35px !important;
-    height: 35px !important;
-  }
-  
-  #header .logo > div > div:first-child i {
     font-size: 18px !important;
   }
   
+  #header .logo p {
+    font-size: 10px !important;
+  }
+  
+  #header .logo > div > div:first-child {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  #header .logo > div > div:first-child i {
+    font-size: 20px !important;
+  }
+  
   #header .navmenu {
-    flex: 1 !important;
-    min-width: 0 !important;
-    margin: 0 5px !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-  
-  #header .navmenu ul {
-    gap: 3px !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-    padding: 0 5px !important;
-  }
-  
-  #header .navmenu ul::-webkit-scrollbar {
     display: none !important;
-  }
-  
-  #header .navmenu ul li a {
-    padding: 6px 10px !important;
-    font-size: 11px !important;
-    white-space: nowrap !important;
-    min-width: auto !important;
-  }
-  
-  /* در موبایل اگر منو زیاد بود، scroll شود */
-  @media (max-width: 576px) {
-    #header .navmenu ul li a {
-      padding: 5px 8px !important;
-      font-size: 10px !important;
-    }
   }
   
   #header .cta-btn {
