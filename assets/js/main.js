@@ -71,6 +71,33 @@
   }
 
   /**
+   * Mobile Bottom Navigation - Set Active Link
+   */
+  function setActiveMobileNav() {
+    const mobileNav = document.querySelector('.mobile-bottom-nav');
+    if (mobileNav) {
+      const currentPath = window.location.pathname;
+      const currentPage = currentPath.split('/').pop() || 'index.html';
+      
+      const links = mobileNav.querySelectorAll('a');
+      links.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+          link.classList.add('active');
+        }
+      });
+    }
+  }
+
+  // Set active link on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setActiveMobileNav);
+  } else {
+    setActiveMobileNav();
+  }
+
+  /**
    * Scroll top button
    */
   let scrollTop = document.querySelector('.scroll-top');
