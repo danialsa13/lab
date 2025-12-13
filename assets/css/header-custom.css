@@ -280,7 +280,7 @@
 /* ریسپانسیو برای موبایل */
 @media (max-width: 1199px) {
   #header .branding > div {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: 0 15px !important;
   }
   
@@ -289,14 +289,12 @@
     padding-right: 15px !important;
   }
   
-  /* منوی ناوبری در موبایل - مخفی به صورت پیش‌فرض */
+  /* منوی ناوبری در موبایل - همیشه قابل مشاهده */
   #header .navmenu {
-    display: none !important;
-  }
-  
-  /* نمایش منو وقتی فعال است */
-  body.mobile-nav-active #header .navmenu {
-    display: block !important;
+    display: flex !important;
+    width: 100% !important;
+    order: 3 !important;
+    margin-top: 10px !important;
   }
   
   #header .cta-btn {
@@ -308,10 +306,9 @@
     flex: 0 0 auto;
   }
   
-  /* دکمه منوی موبایل */
+  /* مخفی کردن دکمه منوی موبایل */
   .mobile-nav-toggle {
-    display: flex !important;
-    order: 3;
+    display: none !important;
   }
 }
 
