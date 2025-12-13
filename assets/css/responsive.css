@@ -1,0 +1,429 @@
+/* استایل‌های ریسپانسیو برای موبایل */
+
+/* موبایل - تا 768px */
+@media (max-width: 768px) {
+  /* Hero Section */
+  #hero {
+    min-height: auto !important;
+    padding: 60px 0 !important;
+    margin-top: 60px !important;
+  }
+  
+  #hero h1 {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
+  }
+  
+  #hero p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .hero-buttons {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+  
+  .hero-buttons .btn {
+    width: 100% !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+  }
+  
+  .hero-image-wrapper i {
+    font-size: 100px !important;
+  }
+  
+  .hero-image-wrapper div {
+    padding: 40px !important;
+  }
+  
+  /* Feature Cards */
+  .feature-card {
+    padding: 25px 20px !important;
+    margin-bottom: 20px;
+  }
+  
+  .feature-icon {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 28px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .feature-card h4 {
+    font-size: 18px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .feature-card p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Header */
+  #header .branding {
+    min-height: 60px !important;
+    padding: 10px 0 !important;
+  }
+  
+  #header .logo .sitename {
+    font-size: 22px !important;
+  }
+  
+  #header .logo p {
+    font-size: 10px !important;
+  }
+  
+  #header .cta-btn {
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+  }
+  
+  /* Container padding */
+  .container,
+  .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  /* Sections */
+  section.section {
+    padding: 40px 0 !important;
+  }
+  
+  /* Cards */
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  /* Buttons */
+  .btn-lg {
+    padding: 12px 24px !important;
+    font-size: 14px !important;
+  }
+  
+  /* Text sizes */
+  h1 {
+    font-size: 28px !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+  }
+  
+  h3 {
+    font-size: 20px !important;
+  }
+  
+  h4 {
+    font-size: 18px !important;
+  }
+  
+  /* Icons */
+  .bi {
+    font-size: 1.2em !important;
+  }
+}
+
+/* موبایل کوچک - تا 576px */
+@media (max-width: 576px) {
+  /* Hero Section */
+  #hero {
+    padding: 40px 0 !important;
+    margin-top: 50px !important;
+  }
+  
+  #hero h1 {
+    font-size: 24px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  #hero p {
+    font-size: 14px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .hero-image-wrapper i {
+    font-size: 80px !important;
+  }
+  
+  .hero-image-wrapper div {
+    padding: 30px !important;
+    border-radius: 20px !important;
+  }
+  
+  /* Feature Cards */
+  .feature-card {
+    padding: 20px 15px !important;
+  }
+  
+  .feature-icon {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 24px !important;
+  }
+  
+  .feature-card h4 {
+    font-size: 16px !important;
+  }
+  
+  .feature-card p {
+    font-size: 13px !important;
+  }
+  
+  /* Header */
+  #header .logo .sitename {
+    font-size: 20px !important;
+  }
+  
+  #header .cta-btn {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+  }
+  
+  /* Sections */
+  section.section {
+    padding: 30px 0 !important;
+  }
+  
+  /* Text sizes */
+  h1 {
+    font-size: 24px !important;
+  }
+  
+  h2 {
+    font-size: 20px !important;
+  }
+  
+  h3 {
+    font-size: 18px !important;
+  }
+  
+  h4 {
+    font-size: 16px !important;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+  }
+  
+  .btn-lg {
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* تبلت - 768px تا 992px */
+@media (min-width: 769px) and (max-width: 992px) {
+  #hero h1 {
+    font-size: 36px !important;
+  }
+  
+  #hero p {
+    font-size: 18px !important;
+  }
+  
+  .hero-image-wrapper i {
+    font-size: 120px !important;
+  }
+  
+  .feature-card {
+    padding: 30px 25px !important;
+  }
+}
+
+/* بهبود نمایش در همه اندازه‌های موبایل */
+@media (max-width: 991px) {
+  /* جلوگیری از overflow */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* بهبود spacing */
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  
+  .row > * {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* بهبود دکمه‌ها */
+  .btn {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  /* بهبود تصاویر */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* بهبود جداول */
+  table {
+    font-size: 14px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  /* بهبود فرم‌ها */
+  .form-control,
+  .form-select {
+    font-size: 16px !important; /* جلوگیری از zoom در iOS */
+  }
+  
+  /* بهبود modal */
+  .modal-dialog {
+    margin: 10px;
+  }
+  
+  .modal-content {
+    border-radius: 10px;
+  }
+}
+
+/* بهبود touch targets برای موبایل */
+@media (max-width: 768px) {
+  a,
+  button,
+  .btn,
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* بهبود navigation */
+  .navmenu ul li a {
+    padding: 15px 20px !important;
+    min-height: 50px;
+  }
+  
+  /* بهبود header در موبایل */
+  #header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+  }
+  
+  #header .branding {
+    min-height: 60px !important;
+    padding: 8px 0 !important;
+  }
+  
+  #header .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  /* بهبود mobile menu toggle */
+  .mobile-nav-toggle {
+    font-size: 24px !important;
+    padding: 8px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+}
+
+/* بهبود نمایش در حالت landscape موبایل */
+@media (max-width: 768px) and (orientation: landscape) {
+  #hero {
+    min-height: auto !important;
+    padding: 30px 0 !important;
+  }
+  
+  #hero h1 {
+    font-size: 24px !important;
+  }
+  
+  #hero p {
+    font-size: 14px !important;
+  }
+}
+
+/* بهبود فونت‌ها برای خوانایی بهتر در موبایل */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .small,
+  small {
+    font-size: 12px;
+  }
+  
+  /* جلوگیری از zoom در iOS هنگام focus روی input */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+  
+  /* بهبود جداول در موبایل */
+  .table-responsive {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* بهبود modal در موبایل */
+  .modal {
+    padding: 0 !important;
+  }
+  
+  .modal-dialog {
+    margin: 0 !important;
+    max-width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .modal-content {
+    border-radius: 0 !important;
+    height: 100% !important;
+    border: none !important;
+  }
+  
+  /* بهبود card در موبایل */
+  .card {
+    border-radius: 10px !important;
+    margin-bottom: 15px;
+  }
+  
+  /* بهبود spacing */
+  .mb-4, .mb-5 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .mt-4, .mt-5 {
+    margin-top: 1.5rem !important;
+  }
+  
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+

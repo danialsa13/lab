@@ -72,21 +72,42 @@ body {
 /* Fallback برای AOS - اگر AOS لود نشود، محتوا نمایش داده می‌شود */
 .no-aos [data-aos],
 .aos-fallback [data-aos],
-html.aos-fallback [data-aos] {
+html.aos-fallback [data-aos],
+html.aos-fallback [data-aos] * {
   opacity: 1 !important;
   visibility: visible !important;
   transform: none !important;
 }
 
 /* اطمینان از نمایش بخش‌ها */
-section.section {
+section.section,
+section {
   display: block !important;
   visibility: visible !important;
+  opacity: 1 !important;
 }
 
-main.main {
+main.main,
+main {
   display: block !important;
   visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* نمایش فوری محتوا در موبایل */
+@media (max-width: 768px) {
+  [data-aos] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+  
+  section,
+  main {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
 }
 
 /* پس‌زمینه نیمه‌شفاف برای متن Hero */
@@ -774,7 +795,16 @@ h6 {
   z-index: 999999;
   overflow: hidden;
   background: var(--background-color);
-  transition: all 0.6s ease-out;
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hide preloader faster on mobile */
+@media (max-width: 768px) {
+  #preloader {
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  }
 }
 
 #preloader:before {

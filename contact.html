@@ -26,6 +26,7 @@
   <link href="assets/css/main.css" rel="stylesheet" media="all">
   <link href="assets/css/header-custom.css" rel="stylesheet" media="all">
   <link href="assets/css/footer-custom.css" rel="stylesheet" media="all">
+  <link href="assets/css/responsive.css" rel="stylesheet" media="all">
   
   <!-- Non-critical CSS -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -597,8 +598,51 @@
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
+  <!-- Preloader - Hidden immediately on mobile -->
   <div id="preloader"></div>
+  <script>
+    // Hide preloader immediately to prevent blocking content
+    (function() {
+      var preloader = document.getElementById('preloader');
+      if (preloader) {
+        // Hide immediately on DOM ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+              preloader.style.opacity = '0';
+              preloader.style.visibility = 'hidden';
+              preloader.style.transition = 'opacity 0.3s, visibility 0.3s';
+              setTimeout(function() {
+                preloader.style.display = 'none';
+              }, 300);
+            }, 50);
+          });
+        } else {
+          // Page already loaded
+          preloader.style.display = 'none';
+        }
+        
+        // Also hide on window load (backup)
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            preloader.style.transition = 'opacity 0.3s, visibility 0.3s';
+            setTimeout(function() {
+              preloader.style.display = 'none';
+            }, 300);
+          }, 100);
+        });
+        
+        // Force hide after max 2 seconds (safety)
+        setTimeout(function() {
+          preloader.style.display = 'none';
+          preloader.style.opacity = '0';
+          preloader.style.visibility = 'hidden';
+        }, 2000);
+      }
+    })();
+  </script>
 
   <!-- Vendor JS Files - Defer for faster loading -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
@@ -611,47 +655,83 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js" defer></script>
 
-  <!-- Fallback برای AOS -->
+  <!-- Fallback برای AOS و نمایش سریع محتوا -->
   <script>
-    // بررسی لود شدن AOS و نمایش محتوا
-    function checkAOS() {
-      // اگر AOS وجود ندارد یا لود نشده
-      if (typeof AOS === 'undefined') {
-        document.documentElement.classList.add('aos-fallback');
-        // نمایش همه عناصر با data-aos
+    // نمایش فوری محتوا در موبایل
+    (function() {
+      // فوراً محتوا را نمایش بده
+      document.documentElement.classList.add('aos-fallback');
+      
+      // نمایش همه عناصر با data-aos
+      function showContent() {
         document.querySelectorAll('[data-aos]').forEach(function(el) {
           el.style.opacity = '1';
           el.style.visibility = 'visible';
           el.style.transform = 'none';
         });
-        return;
+        
+        // نمایش همه section ها
+        document.querySelectorAll('section').forEach(function(el) {
+          el.style.display = 'block';
+          el.style.visibility = 'visible';
+        });
       }
       
-      // اگر AOS وجود دارد اما بعد از 3 ثانیه هنوز انیمیت نشده
-      setTimeout(function() {
-        document.querySelectorAll('[data-aos]:not(.aos-animate)').forEach(function(el) {
-          // اگر عنصری هنوز انیمیت نشده، آن را نمایش بده
-          if (el.offsetParent === null || window.getComputedStyle(el).opacity === '0') {
-            el.style.opacity = '1';
-            el.style.visibility = 'visible';
-            el.style.transform = 'none';
-            el.classList.add('aos-animate');
-          }
+      // اجرای فوری
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          showContent();
+          // Initialize AOS if available
+          setTimeout(function() {
+            if (typeof AOS !== 'undefined') {
+              AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50
+              });
+            }
+          }, 100);
         });
-      }, 3000);
-    }
-    
-    // اجرا بعد از لود کامل صفحه
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', checkAOS);
-    } else {
-      checkAOS();
-    }
-    
-    // همچنین بعد از لود کامل window
-    window.addEventListener('load', function() {
-      setTimeout(checkAOS, 1000);
-    });
+      } else {
+        showContent();
+        setTimeout(function() {
+          if (typeof AOS !== 'undefined') {
+            AOS.init({
+              duration: 800,
+              once: true,
+              offset: 50
+            });
+          }
+        }, 100);
+      }
+      
+      // Backup: نمایش محتوا بعد از 500ms
+      setTimeout(showContent, 500);
+      
+      // بررسی لود شدن AOS
+      function checkAOS() {
+        if (typeof AOS === 'undefined') {
+          showContent();
+          return;
+        }
+        
+        // اگر AOS وجود دارد اما بعد از 1 ثانیه هنوز انیمیت نشده
+        setTimeout(function() {
+          document.querySelectorAll('[data-aos]:not(.aos-animate)').forEach(function(el) {
+            if (window.getComputedStyle(el).opacity === '0' || el.offsetParent === null) {
+              el.style.opacity = '1';
+              el.style.visibility = 'visible';
+              el.style.transform = 'none';
+              el.classList.add('aos-animate');
+            }
+          });
+        }, 1000);
+      }
+      
+      window.addEventListener('load', function() {
+        setTimeout(checkAOS, 500);
+      });
+    })();
   </script>
 
 </body>
