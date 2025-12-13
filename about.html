@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>درباره ما - آزمایاب</title>
+  <meta name="description" content="درباره آزمایشگاه آزمایاب">
+  <meta name="keywords" content="آزمایشگاه، آزمایاب، آزمایش خون">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#0d6efd">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts - Optimized -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files - Critical CSS loaded first -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="all">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="all">
+  
+  <!-- Main CSS File - Critical -->
+  <link href="assets/css/main.css" rel="stylesheet" media="all">
+  <link href="assets/css/header-custom.css" rel="stylesheet" media="all">
+  <link href="assets/css/footer-custom.css" rel="stylesheet" media="all">
+  
+  <!-- Non-critical CSS -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/footer-custom.css" rel="stylesheet">
+  <link href="assets/css/header-custom.css" rel="stylesheet">
+  
+  <style>
+    .about-hero {
+      background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+      padding: 100px 0 60px;
+      color: white;
+      text-align: center;
+      margin-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat center;
+      background-size: cover;
+      opacity: 0.3;
+    }
+    .about-hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .about-hero p {
+      font-size: 20px;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+    .about-content-card {
+      background: white;
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      transition: transform 0.3s;
+    }
+    .about-content-card:hover {
+      transform: translateY(-5px);
+    }
+    .about-image-wrapper {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      height: 100%;
+      min-height: 400px;
+      background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .about-image-wrapper i {
+      font-size: 120px;
+      opacity: 0.3;
+    }
+    .mission-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      height: 100%;
+      text-align: center;
+      border-top: 4px solid #0d6efd;
+    }
+    .mission-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(13, 110, 253, 0.2);
+    }
+    .mission-card .icon-wrapper {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      color: white;
+      font-size: 48px;
+    }
+    .mission-card h4 {
+      color: #2c3e50;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+    .mission-card p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      text-align: center;
+      height: 100%;
+      border-top: 4px solid #0d6efd;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(13, 110, 253, 0.2);
+    }
+    .service-card .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      color: white;
+      font-size: 40px;
+    }
+    .service-card h4 {
+      color: #2c3e50;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    .service-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+    .feature-list li {
+      padding: 20px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+    .feature-list li i {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .feature-list li h5 {
+      color: #2c3e50;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .feature-list li p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top" style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.1); width: 100%; position: fixed; top: 0; z-index: 1000;">
+
+    <div class="branding d-flex align-items-center" style="min-height: 80px; padding: 15px 0; background: white; width: 100%;">
+
+      <div class="container-fluid position-relative d-flex align-items-center justify-content-between" style="padding: 0 30px; max-width: 100%;">
+        <a href="index.html" class="logo d-flex align-items-center me-auto" style="text-decoration: none;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+              <i class="bi bi-heart-pulse-fill" style="color: white; font-size: 24px;"></i>
+            </div>
+            <div>
+              <h1 class="sitename mb-0" style="font-size: 28px; font-weight: 700; color: #2c3e50; margin: 0;">آزمایاب</h1>
+              <p style="font-size: 12px; color: #0d6efd; margin: 0;">آزمایشگاه تخصصی</p>
+            </div>
+          </div>
+        </a>
+
+        <nav id="navmenu" class="navmenu" style="flex: 1; display: flex; justify-content: center;">
+          <ul>
+            <li><a href="index.html">خانه</a></li>
+            <li><a href="about.html" class="active">درباره ما</a></li>
+            <li><a href="patient-login.html">ورود بیمار</a></li>
+            <li><a href="contact.html">تماس با ما</a></li>
+          </ul>
+        </nav>
+
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <a class="cta-btn d-none d-sm-block" href="admin-login.html" style="background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); color: white; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3); white-space: nowrap;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(13, 110, 253, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(13, 110, 253, 0.3)'">
+            <i class="bi bi-shield-lock me-2"></i>ورود ادمین
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+    <!-- About Hero -->
+    <div class="about-hero">
+      <div class="container">
+        <h1 data-aos="fade-down">درباره آزمایاب</h1>
+        <p data-aos="fade-up" data-aos-delay="100">آزمایشگاه تخصصی با بیش از یک دهه تجربه در خدمت سلامت شما</p>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about section" style="padding: 80px 0; background: #f8f9fa;">
+      <div class="container">
+        <div class="row gy-4 gx-5">
+          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-image-wrapper">
+              <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+          </div>
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <div class="about-content-card">
+              <h3 style="color: #2c3e50; font-weight: 700; margin-bottom: 25px; font-size: 32px;">درباره آزمایاب</h3>
+              <p style="color: #666; font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+              آزمایشگاه آزمایاب با بیش از یک دهه تجربه در زمینه انجام آزمایش‌های تشخیصی و بالینی، یکی از معتبرترین مراکز آزمایشگاهی در کشور است. ما با بهره‌گیری از جدیدترین تجهیزات پزشکی و تکنولوژی‌های روز دنیا، خدمات آزمایشگاهی با کیفیت و دقیق را به مراجعین خود ارائه می‌دهیم.
+            </p>
+              <p style="color: #666; font-size: 16px; line-height: 1.8; margin-bottom: 30px;">
+              هدف ما در آزمایاب، ارائه خدمات با بالاترین استانداردهای بین‌المللی و رضایت کامل مراجعین است. ما باور داریم که سلامتی شما بالاترین اولویت ماست و تمام تلاش خود را برای ارائه نتایج دقیق و سریع به کار می‌گیریم.
+            </p>
+              <ul class="feature-list">
+              <li>
+                <i class="fa-solid fa-vial-circle-check"></i>
+                <div>
+                  <h5>دقت و سرعت در انجام آزمایش‌ها</h5>
+                  <p>استفاده از فناوری‌های روز دنیا برای اطمینان از صحت نتایج و تحویل سریع پاسخ‌ها.</p>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-pump-medical"></i>
+                <div>
+                  <h5>تیمی متخصص و متعهد</h5>
+                  <p>گروهی از پزشکان، کارشناسان آزمایشگاهی و پرسنل حرفه‌ای که با دقت و مسئولیت‌پذیری به شما خدمت‌رسانی می‌کنند.</p>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-heart-circle-xmark"></i>
+                <div>
+                  <h5>خدمات جامع در یک مکان</h5>
+                  <p>انجام انواع آزمایش‌های عمومی و تخصصی، غربالگری سلامت، و مشاوره‌های علمی در محیطی امن و مجهز.</p>
+                </div>
+              </li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission section" style="padding: 80px 0;">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="mission-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-eye"></i>
+              </div>
+              <h4>ماموریت ما</h4>
+              <p>ارائه خدمات آزمایشگاهی با بالاترین کیفیت و دقت، با هدف کمک به حفظ و بهبود سلامت جامعه.</p>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="mission-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-star"></i>
+              </div>
+              <h4>چشم‌انداز ما</h4>
+              <p>تبدیل شدن به برترین و معتبرترین آزمایشگاه در منطقه با استفاده از تکنولوژی‌های پیشرفته.</p>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="mission-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-heart"></i>
+              </div>
+              <h4>ارزش‌های ما</h4>
+              <p>دقت، سرعت، امانت‌داری، احترام به مراجعین و تعهد به استانداردهای بین‌المللی.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services-overview" class="services section" style="padding: 80px 0; background: #f8f9fa;">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="color: #2c3e50; font-weight: 700; font-size: 36px;">خدمات ما</h2>
+        <p style="color: #666; font-size: 18px;">آزمایاب ارائه‌دهنده طیف وسیعی از خدمات آزمایشگاهی</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card">
+              <div class="icon-wrapper">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <h4>آزمایش‌های خون</h4>
+              <p>انواع آزمایش‌های خونی و بیوشیمی شامل CBC، قند خون، چربی، کبد و کلیه</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="icon-wrapper">
+                <i class="fas fa-dna"></i>
+              </div>
+              <h4>آزمایش‌های ژنتیکی</h4>
+              <p>تست‌های پیشرفته ژنتیکی و DNA برای تشخیص بیماری‌های ارثی</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="icon-wrapper">
+                <i class="fas fa-microscope"></i>
+              </div>
+              <h4>آزمایش‌های میکروبی</h4>
+              <p>تست‌های میکروبیولوژی و کشت برای تشخیص باکتری‌ها و قارچ‌ها</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card">
+              <div class="icon-wrapper">
+                <i class="fas fa-vial"></i>
+              </div>
+              <h4>آزمایش‌های ادرار</h4>
+              <p>تست‌های کامل ادرار و آنالیز برای تشخیص بیماری‌های کلیوی</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section" style="padding: 80px 0;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2 style="color: #2c3e50; font-weight: 700; font-size: 36px;">تیم ما</h2>
+          <p style="color: #666; font-size: 18px;">متخصصان و کارشناسان حرفه‌ای آزمایاب</p>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="about-content-card text-center">
+              <div class="icon-wrapper" style="display: inline-block; margin-bottom: 20px;">
+                <i class="bi bi-person-badge"></i>
+              </div>
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 15px;">دکتر احمدی</h4>
+              <p style="color: #0d6efd; font-weight: 600; margin-bottom: 15px;">متخصص پاتولوژی</p>
+              <p style="color: #666; line-height: 1.8;">بیش از 15 سال تجربه در زمینه آزمایش‌های تشخیصی و پاتولوژی</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-content-card text-center">
+              <div class="icon-wrapper" style="display: inline-block; margin-bottom: 20px;">
+                <i class="bi bi-person-badge"></i>
+              </div>
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 15px;">دکتر رضایی</h4>
+              <p style="color: #0d6efd; font-weight: 600; margin-bottom: 15px;">متخصص بیوشیمی</p>
+              <p style="color: #666; line-height: 1.8;">متخصص در زمینه آزمایش‌های بیوشیمی و هورمونی با 12 سال سابقه</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="about-content-card text-center">
+              <div class="icon-wrapper" style="display: inline-block; margin-bottom: 20px;">
+                <i class="bi bi-person-badge"></i>
+              </div>
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 15px;">دکتر محمدی</h4>
+              <p style="color: #0d6efd; font-weight: 600; margin-bottom: 15px;">متخصص میکروبیولوژی</p>
+              <p style="color: #666; line-height: 1.8;">تخصص در زمینه آزمایش‌های میکروبی و کشت با 10 سال تجربه</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section" style="padding: 80px 0;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2 style="color: #2c3e50; font-weight: 700; font-size: 36px;">چرا آزمایاب را انتخاب کنیم؟</h2>
+          <p style="color: #666; font-size: 18px;">مزایای انتخاب آزمایشگاه آزمایاب</p>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="about-content-card">
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 20px; font-size: 24px;">
+                <i class="bi bi-check-circle-fill me-2" style="color: #20c997;"></i>تجهیزات پیشرفته
+              </h4>
+              <p style="color: #666; line-height: 1.8;">
+                آزمایشگاه آزمایاب مجهز به جدیدترین دستگاه‌های آزمایشگاهی است که دقت و سرعت در انجام آزمایش‌ها را تضمین می‌کند. تمامی تجهیزات ما مطابق با استانداردهای بین‌المللی و به‌روزرسانی شده است.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-content-card">
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 20px; font-size: 24px;">
+                <i class="bi bi-check-circle-fill me-2" style="color: #20c997;"></i>تیم متخصص
+              </h4>
+              <p style="color: #666; line-height: 1.8;">
+                کارشناسان و پزشکان ما با سال‌ها تجربه در زمینه آزمایش‌های تشخیصی، آماده ارائه بهترین خدمات به شما هستند. تیم ما به صورت مداوم در حال آموزش و به‌روزرسانی دانش خود است.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="about-content-card">
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 20px; font-size: 24px;">
+                <i class="bi bi-check-circle-fill me-2" style="color: #20c997;"></i>نتایج سریع
+              </h4>
+              <p style="color: #666; line-height: 1.8;">
+                با استفاده از سیستم‌های پیشرفته و تکنولوژی‌های روز، نتایج آزمایش‌های شما در کوتاه‌ترین زمان ممکن آماده می‌شود و از طریق پنل آنلاین در اختیار شما قرار می‌گیرد.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="about-content-card">
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 20px; font-size: 24px;">
+                <i class="bi bi-check-circle-fill me-2" style="color: #20c997;"></i>پشتیبانی 24/7
+              </h4>
+              <p style="color: #666; line-height: 1.8;">
+                تیم پشتیبانی ما در تمام ساعات شبانه‌روز آماده پاسخگویی به سوالات و رفع مشکلات شماست. شما می‌توانید از طریق تلفن، ایمیل یا چت آنلاین با ما در ارتباط باشید.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="section" style="padding: 80px 0; background: #f8f9fa;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2 style="color: #2c3e50; font-weight: 700; font-size: 36px;">تاریخچه آزمایاب</h2>
+          <p style="color: #666; font-size: 18px;">سفر ما از ابتدا تا امروز</p>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-10 mx-auto">
+            <div class="about-content-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <div class="icon-wrapper" style="display: inline-block;">
+                    <i class="bi bi-calendar-check"></i>
+                  </div>
+                  <h4 style="color: #0d6efd; font-weight: 700; margin-top: 20px; font-size: 24px;">1393</h4>
+                </div>
+                <div class="col-md-9">
+                  <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 15px;">شروع فعالیت</h4>
+                  <p style="color: #666; line-height: 1.8;">
+                    آزمایشگاه آزمایاب در سال 1393 با هدف ارائه خدمات آزمایشگاهی با کیفیت و دقیق به شهروندان تاسیس شد. از همان ابتدا، تمرکز ما بر استفاده از تجهیزات پیشرفته و تیم متخصص بود.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="about-content-card mt-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <div class="icon-wrapper" style="display: inline-block;">
+                    <i class="bi bi-trophy"></i>
+                  </div>
+                  <h4 style="color: #0d6efd; font-weight: 700; margin-top: 20px; font-size: 24px;">1396</h4>
+                </div>
+                <div class="col-md-9">
+                  <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 15px;">دریافت گواهینامه ISO</h4>
+                  <p style="color: #666; line-height: 1.8;">
+                    در سال 1396، آزمایشگاه آزمایاب موفق به دریافت گواهینامه ISO 15189 شد که نشان‌دهنده تعهد ما به استانداردهای بین‌المللی در زمینه آزمایش‌های پزشکی است.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="about-content-card mt-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <div class="icon-wrapper" style="display: inline-block;">
+                    <i class="bi bi-laptop"></i>
+                  </div>
+                  <h4 style="color: #0d6efd; font-weight: 700; margin-top: 20px; font-size: 24px;">1400</h4>
+                </div>
+                <div class="col-md-9">
+                  <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 15px;">راه‌اندازی سیستم آنلاین</h4>
+                  <p style="color: #666; line-height: 1.8;">
+                    در سال 1400، سیستم آنلاین آزمایاب راه‌اندازی شد که به بیماران امکان دسترسی به نتایج آزمایش‌های خود از طریق پنل آنلاین را می‌دهد. این سیستم باعث تسهیل دسترسی و افزایش رضایت بیماران شد.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="about-content-card mt-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <div class="icon-wrapper" style="display: inline-block;">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <h4 style="color: #0d6efd; font-weight: 700; margin-top: 20px; font-size: 24px;">1403</h4>
+                </div>
+                <div class="col-md-9">
+                  <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 15px;">امروز</h4>
+                  <p style="color: #666; line-height: 1.8;">
+                    امروز، آزمایاب با بیش از 10 سال تجربه، یکی از معتبرترین و پیشروترین آزمایشگاه‌های کشور است. ما با افتخار به بیش از 5000 بیمار راضی خدمت کرده‌ایم و بیش از 15000 آزمایش با دقت و کیفیت انجام داده‌ایم.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="section" style="padding: 80px 0;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2 style="color: #2c3e50; font-weight: 700; font-size: 36px;">گواهینامه‌ها و مجوزها</h2>
+          <p style="color: #666; font-size: 18px;">تاییدیه‌های رسمی و استانداردهای بین‌المللی</p>
+        </div>
+        <div class="row gy-4 mt-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="mission-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-award"></i>
+              </div>
+              <h4>ISO 15189</h4>
+              <p>گواهینامه بین‌المللی کیفیت آزمایشگاه‌های پزشکی</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="mission-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h4>مجوز وزارت بهداشت</h4>
+              <p>دارای مجوز رسمی از وزارت بهداشت، درمان و آموزش پزشکی</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="mission-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-patch-check"></i>
+              </div>
+              <h4>استانداردهای بین‌المللی</h4>
+              <p>رعایت تمامی استانداردهای بین‌المللی در زمینه آزمایش‌های پزشکی</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="section" style="padding: 80px 0; background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); color: white;">
+      <div class="container">
+        <div class="row gy-4 text-center">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div style="padding: 30px;">
+              <i class="bi bi-people-fill" style="font-size: 64px; margin-bottom: 20px; opacity: 0.9;"></i>
+              <h3 style="font-size: 48px; font-weight: 700; margin-bottom: 10px;">5000+</h3>
+              <p style="font-size: 18px; opacity: 0.9;">بیمار راضی</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div style="padding: 30px;">
+              <i class="bi bi-file-earmark-medical" style="font-size: 64px; margin-bottom: 20px; opacity: 0.9;"></i>
+              <h3 style="font-size: 48px; font-weight: 700; margin-bottom: 10px;">15000+</h3>
+              <p style="font-size: 18px; opacity: 0.9;">آزمایش انجام شده</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div style="padding: 30px;">
+              <i class="bi bi-award-fill" style="font-size: 64px; margin-bottom: 20px; opacity: 0.9;"></i>
+              <h3 style="font-size: 48px; font-weight: 700; margin-bottom: 10px;">10+</h3>
+              <p style="font-size: 18px; opacity: 0.9;">سال تجربه</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div style="padding: 30px;">
+              <i class="bi bi-star-fill" style="font-size: 64px; margin-bottom: 20px; opacity: 0.9;"></i>
+              <h3 style="font-size: 48px; font-weight: 700; margin-bottom: 10px;">4.9</h3>
+              <p style="font-size: 18px; opacity: 0.9;">امتیاز از 5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; padding: 60px 0 20px; margin-top: 80px;">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center mb-3">
+            <h3 class="sitename mb-0" style="color: white; font-weight: bold;">آزمایاب</h3>
+          </a>
+          <p style="color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 20px;">
+            آزمایشگاه آزمایاب با بیش از یک دهه تجربه، ارائه‌دهنده خدمات آزمایشگاهی با کیفیت و دقیق است. ما با بهره‌گیری از جدیدترین تجهیزات و تکنولوژی‌های روز دنیا، در خدمت سلامت شما هستیم.
+          </p>
+          <div class="footer-contact pt-3">
+            <p style="margin-bottom: 8px;"><i class="bi bi-geo-alt-fill me-2" style="color: #0d6efd;"></i> تهران، خیابان ولیعصر، پلاک 123</p>
+            <p style="margin-bottom: 8px;"><i class="bi bi-telephone-fill me-2" style="color: #0d6efd;"></i> <strong>09226926189</strong></p>
+            <p style="margin-bottom: 15px;"><i class="bi bi-envelope-fill me-2" style="color: #0d6efd;"></i> saidiidanial@gmail.com</p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none; transition: all 0.3s;"><i class="bi bi-instagram"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none; transition: all 0.3s;"><i class="bi bi-telegram"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none; transition: all 0.3s;"><i class="bi bi-whatsapp"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none; transition: all 0.3s;"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4 style="color: white; font-weight: bold; margin-bottom: 20px; font-size: 18px;">دسترسی سریع</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;"><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> صفحه اصلی</a></li>
+            <li style="margin-bottom: 10px;"><a href="about.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> درباره ما</a></li>
+            <li style="margin-bottom: 10px;"><a href="patient-login.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> ورود بیمار</a></li>
+            <li style="margin-bottom: 10px;"><a href="admin-login.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> ورود ادمین</a></li>
+            <li style="margin-bottom: 10px;"><a href="contact.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> تماس با ما</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4 style="color: white; font-weight: bold; margin-bottom: 20px; font-size: 18px;">خدمات ما</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> آزمایش خون کامل</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> آزمایش ادرار</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> آزمایش ژنتیکی</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> آزمایش میکروبی</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> غربالگری سلامت</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4 style="color: white; font-weight: bold; margin-bottom: 20px; font-size: 18px;">ساعات کاری</h4>
+          <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.8);">
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>شنبه تا چهارشنبه:</span>
+              <strong style="color: #0d6efd;">8:00 - 20:00</strong>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>پنج‌شنبه:</span>
+              <strong style="color: #0d6efd;">8:00 - 14:00</strong>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>جمعه:</span>
+              <strong style="color: #0d6efd;">تعطیل</strong>
+            </li>
+          </ul>
+          <div class="mt-4">
+            <h5 style="color: white; font-size: 16px; margin-bottom: 15px;">اطلاعات بیشتر</h5>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px;">قوانین و مقررات</a></li>
+              <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px;">حریم خصوصی</a></li>
+              <li style="margin-bottom: 8px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px;">سوالات متداول</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-5 pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+      <p style="color: rgba(255,255,255,0.7); margin: 0; font-size: 14px;">
+        © 1403 کلیه حقوق محفوظ است | <strong style="color: #0d6efd;">آزمایاب</strong>
+      </p>
+      <p style="color: rgba(255,255,255,0.6); margin-top: 10px; font-size: 12px;">
+        طراحی و توسعه با ❤️ برای سلامت شما
+      </p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files - Defer for faster loading -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- Fallback برای AOS -->
+  <script>
+    // بررسی لود شدن AOS و نمایش محتوا
+    function checkAOS() {
+      // اگر AOS وجود ندارد یا لود نشده
+      if (typeof AOS === 'undefined') {
+        document.documentElement.classList.add('aos-fallback');
+        // نمایش همه عناصر با data-aos
+        document.querySelectorAll('[data-aos]').forEach(function(el) {
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+          el.style.transform = 'none';
+        });
+        return;
+      }
+      
+      // اگر AOS وجود دارد اما بعد از 3 ثانیه هنوز انیمیت نشده
+      setTimeout(function() {
+        document.querySelectorAll('[data-aos]:not(.aos-animate)').forEach(function(el) {
+          // اگر عنصری هنوز انیمیت نشده، آن را نمایش بده
+          if (el.offsetParent === null || window.getComputedStyle(el).opacity === '0') {
+            el.style.opacity = '1';
+            el.style.visibility = 'visible';
+            el.style.transform = 'none';
+            el.classList.add('aos-animate');
+          }
+        });
+      }, 3000);
+    }
+    
+    // اجرا بعد از لود کامل صفحه
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkAOS);
+    } else {
+      checkAOS();
+    }
+    
+    // همچنین بعد از لود کامل window
+    window.addEventListener('load', function() {
+      setTimeout(checkAOS, 1000);
+    });
+  </script>
+
+</body>
+</html>
+

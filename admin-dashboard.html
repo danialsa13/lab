@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>داشبورد ادمین - آزمایاب</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/header-custom.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Vazir', 'Tahoma', sans-serif;
+            padding-top: 125px;
+        }
+        .sidebar {
+            background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+            min-height: calc(100vh - 125px);
+            color: white;
+            padding: 20px;
+            position: fixed;
+            width: 250px;
+            top: 125px;
+        }
+        .sidebar-header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 30px;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar-menu li {
+            margin-bottom: 10px;
+        }
+        .sidebar-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            display: block;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background: rgba(255,255,255,0.2);
+        }
+        .main-content {
+            margin-right: 250px;
+            padding: 30px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 15px 20px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+            border: none;
+        }
+        .table {
+            margin-top: 20px;
+        }
+        .logout-btn {
+            position: absolute;
+            bottom: 20px;
+            width: calc(100% - 40px);
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="header sticky-top" style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.1); width: 100%; position: fixed; top: 0; z-index: 1000;">
+        <div class="branding d-flex align-items-center" style="min-height: 80px; padding: 15px 0; background: white;">
+            <div class="container-fluid position-relative d-flex align-items-center justify-content-between" style="padding: 0 30px; max-width: 100%;">
+                <a href="index.html" class="logo d-flex align-items-center me-auto" style="text-decoration: none;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-heart-pulse-fill" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <div>
+                            <h1 class="sitename mb-0" style="font-size: 28px; font-weight: 700; color: #2c3e50; margin: 0;">آزمایاب</h1>
+                            <p style="font-size: 12px; color: #0d6efd; margin: 0;">آزمایشگاه تخصصی</p>
+                        </div>
+                    </div>
+                </a>
+                <nav id="navmenu" class="navmenu" style="flex: 1; display: flex; justify-content: center;">
+                    <ul>
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="patient-login.html">ورود بیمار</a></li>
+                        <li><a href="admin-login.html" class="active">ورود ادمین</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                    </ul>
+                </nav>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <a class="cta-btn d-none d-sm-block" href="admin-login.html" style="background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); color: white; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3); white-space: nowrap;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(13, 110, 253, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(13, 110, 253, 0.3)'">
+                        <i class="bi bi-shield-lock me-2"></i>ورود ادمین
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h4>آزمایاب</h4>
+            <p class="mb-0">داشبورد ادمین</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#" class="active" onclick="showSection('patients')"><i class="bi bi-people"></i> مدیریت بیماران</a></li>
+            <li><a href="#" onclick="showSection('tests')"><i class="bi bi-file-earmark-medical"></i> افزودن آزمایش</a></li>
+            <li><a href="#" onclick="showSection('all-tests')"><i class="bi bi-list-check"></i> لیست آزمایش‌ها</a></li>
+        </ul>
+        <button class="btn btn-outline-light logout-btn" onclick="logout()">
+            <i class="bi bi-box-arrow-right"></i> خروج
+        </button>
+    </div>
+
+    <div class="main-content">
+        <!-- بخش افزودن بیمار -->
+        <div id="patients-section" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-person-plus"></i> افزودن بیمار جدید
+                </div>
+                <div class="card-body">
+                    <form id="addPatientForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">شماره تماس</label>
+                                <input type="text" class="form-control" id="patientPhone" placeholder="09123456789" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">نام بیمار</label>
+                                <input type="text" class="form-control" id="patientName" placeholder="نام و نام خانوادگی" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-check-circle"></i> افزودن بیمار
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-people"></i> لیست بیماران
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>شماره تماس</th>
+                                    <th>نام</th>
+                                    <th>تاریخ ثبت</th>
+                                </tr>
+                            </thead>
+                            <tbody id="patientsList">
+                                <!-- لیست بیماران اینجا نمایش داده می‌شود -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- بخش افزودن آزمایش -->
+        <div id="tests-section" class="section" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-file-earmark-medical"></i> افزودن آزمایش جدید
+                </div>
+                <div class="card-body">
+                    <form id="addTestForm">
+                        <div class="mb-3">
+                            <label class="form-label">انتخاب بیمار</label>
+                            <select class="form-select" id="testPatientId" required>
+                                <option value="">-- انتخاب بیمار --</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">نام آزمایش</label>
+                            <input type="text" class="form-control" id="testName" placeholder="مثلا: آزمایش خون کامل">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">آپلود برگه آزمایش</label>
+                            <input type="file" class="form-control" id="testFile" accept="image/*,.pdf" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-upload"></i> آپلود و ثبت آزمایش
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- بخش لیست آزمایش‌ها -->
+        <div id="all-tests-section" class="section" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-list-check"></i> لیست تمام آزمایش‌ها
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>بیمار</th>
+                                    <th>شماره تماس</th>
+                                    <th>نام آزمایش</th>
+                                    <th>تاریخ ثبت</th>
+                                    <th>عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="allTestsList">
+                                <!-- لیست آزمایش‌ها اینجا نمایش داده می‌شود -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        // بررسی لاگین بودن ادمین
+        if (!checkAuth('admin')) {
+            // redirect handled in checkAuth
+        }
+
+        // نمایش بخش‌های مختلف
+        function showSection(section) {
+            document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+            document.querySelectorAll('.sidebar-menu a').forEach(a => a.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            if (section === 'patients') {
+                document.getElementById('patients-section').style.display = 'block';
+                loadPatients();
+            } else if (section === 'tests') {
+                document.getElementById('tests-section').style.display = 'block';
+                loadPatientsForTest();
+            } else if (section === 'all-tests') {
+                document.getElementById('all-tests-section').style.display = 'block';
+                loadAllTests();
+            }
+        }
+
+        // افزودن بیمار
+        document.getElementById('addPatientForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const phone = document.getElementById('patientPhone').value;
+            const name = document.getElementById('patientName').value;
+
+            // بررسی تکراری نبودن شماره
+            if (AppData.patients.findByPhone(phone)) {
+                showMessage('این شماره تماس قبلا ثبت شده است!', 'error');
+                return;
+            }
+
+            AppData.patients.add({ phone, name });
+            showMessage('بیمار با موفقیت افزوده شد!', 'success');
+            document.getElementById('addPatientForm').reset();
+            loadPatients();
+            loadPatientsForTest();
+        });
+
+        // افزودن آزمایش
+        document.getElementById('addTestForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const patientId = document.getElementById('testPatientId').value;
+            const testName = document.getElementById('testName').value;
+            const file = document.getElementById('testFile').files[0];
+
+            if (!file) {
+                showMessage('لطفا فایل را انتخاب کنید!', 'error');
+                return;
+            }
+
+            const patient = AppData.patients.findById(patientId);
+            if (!patient) {
+                showMessage('بیمار انتخاب شده یافت نشد!', 'error');
+                return;
+            }
+
+            try {
+                const fileUrl = await fileToBase64(file);
+                AppData.tests.add({
+                    patientId: patient.id,
+                    patientName: patient.name,
+                    patientPhone: patient.phone,
+                    testName: testName,
+                    fileUrl: fileUrl,
+                    fileType: file.type,
+                    fileName: file.name
+                });
+
+                showMessage('آزمایش با موفقیت ثبت شد!', 'success');
+                document.getElementById('addTestForm').reset();
+                loadAllTests();
+            } catch (error) {
+                showMessage('خطا در آپلود فایل!', 'error');
+            }
+        });
+
+        // بارگذاری لیست بیماران
+        function loadPatients() {
+            const patients = AppData.patients.getAll();
+            const tbody = document.getElementById('patientsList');
+            if (patients.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="3" class="text-center">هیچ بیماری ثبت نشده است</td></tr>';
+                return;
+            }
+            tbody.innerHTML = patients.map(p => `
+                <tr>
+                    <td>${p.phone}</td>
+                    <td>${p.name}</td>
+                    <td>${new Date(p.createdAt).toLocaleDateString('fa-IR')}</td>
+                </tr>
+            `).join('');
+        }
+
+        // بارگذاری بیماران برای انتخاب در فرم آزمایش
+        function loadPatientsForTest() {
+            const patients = AppData.patients.getAll();
+            const select = document.getElementById('testPatientId');
+            select.innerHTML = '<option value="">-- انتخاب بیمار --</option>';
+            patients.forEach(p => {
+                const option = document.createElement('option');
+                option.value = p.id;
+                option.textContent = `${p.name} - ${p.phone}`;
+                select.appendChild(option);
+            });
+        }
+
+        // بارگذاری لیست آزمایش‌ها
+        function loadAllTests() {
+            const tests = AppData.tests.getAll();
+            const tbody = document.getElementById('allTestsList');
+            if (tests.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" class="text-center">هیچ آزمایشی ثبت نشده است</td></tr>';
+                return;
+            }
+            tbody.innerHTML = tests.map(t => `
+                <tr>
+                    <td>${t.patientName}</td>
+                    <td>${t.patientPhone}</td>
+                    <td>${t.testName}</td>
+                    <td>${new Date(t.createdAt).toLocaleDateString('fa-IR')}</td>
+                    <td>
+                        <a href="${t.fileUrl}" target="_blank" class="btn btn-sm btn-primary">
+                            <i class="bi bi-eye"></i> مشاهده
+                        </a>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // خروج از سیستم
+        function logout() {
+            AppData.session.clear();
+            window.location.href = 'admin-login.html';
+        }
+
+        // بارگذاری اولیه
+        loadPatients();
+        loadPatientsForTest();
+    </script>
+</body>
+</html>
+

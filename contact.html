@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>تماس با ما - آزمایاب</title>
+  <meta name="description" content="تماس با آزمایشگاه آزمایاب">
+  <meta name="keywords" content="تماس، آزمایاب، آزمایشگاه">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#0d6efd">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts - Optimized -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files - Critical CSS loaded first -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="all">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="all">
+  
+  <!-- Main CSS File - Critical -->
+  <link href="assets/css/main.css" rel="stylesheet" media="all">
+  <link href="assets/css/header-custom.css" rel="stylesheet" media="all">
+  <link href="assets/css/footer-custom.css" rel="stylesheet" media="all">
+  
+  <!-- Non-critical CSS -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/footer-custom.css" rel="stylesheet">
+  <link href="assets/css/header-custom.css" rel="stylesheet">
+  
+  <style>
+    .contact-hero {
+      background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+      padding: 100px 0 60px;
+      color: white;
+      text-align: center;
+      margin-top: 80px;
+    }
+    .contact-hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .contact-hero p {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+    .info-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      border-top: 4px solid #0d6efd;
+    }
+    .info-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(13, 110, 253, 0.2);
+    }
+    .info-card .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      color: white;
+      font-size: 32px;
+    }
+    .info-card h3 {
+      color: #2c3e50;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+    .info-card p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0;
+    }
+    .contact-form-wrapper {
+      background: white;
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      margin-top: 40px;
+    }
+    .contact-form-wrapper h2 {
+      color: #2c3e50;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 32px;
+    }
+    .form-control, .form-select {
+      border-radius: 12px;
+      padding: 15px 20px;
+      border: 2px solid #e0e0e0;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    }
+    .btn-submit {
+      background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+      border: none;
+      border-radius: 12px;
+      padding: 15px 50px;
+      color: white;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+      color: white;
+    }
+    .map-wrapper {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      margin-top: 40px;
+    }
+    .map-wrapper iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+  </style>
+</head>
+<body class="index-page">
+
+  <header id="header" class="header sticky-top" style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.1); width: 100%; position: fixed; top: 0; z-index: 1000;">
+
+    <div class="branding d-flex align-items-center" style="min-height: 80px; padding: 15px 0; background: white; width: 100%;">
+      <div class="container-fluid position-relative d-flex align-items-center justify-content-between" style="padding: 0 30px; max-width: 100%;">
+        <a href="index.html" class="logo d-flex align-items-center me-auto" style="text-decoration: none;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+              <i class="bi bi-heart-pulse-fill" style="color: white; font-size: 24px;"></i>
+            </div>
+            <div>
+              <h1 class="sitename mb-0" style="font-size: 28px; font-weight: 700; color: #2c3e50; margin: 0;">آزمایاب</h1>
+              <p style="font-size: 12px; color: #0d6efd; margin: 0;">آزمایشگاه تخصصی</p>
+            </div>
+          </div>
+        </a>
+
+        <nav id="navmenu" class="navmenu" style="flex: 1; display: flex; justify-content: center;">
+          <ul>
+            <li><a href="index.html">خانه</a></li>
+            <li><a href="about.html">درباره ما</a></li>
+            <li><a href="patient-login.html">ورود بیمار</a></li>
+            <li><a href="contact.html" class="active">تماس با ما</a></li>
+          </ul>
+        </nav>
+
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <a class="cta-btn d-none d-sm-block" href="admin-login.html" style="background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); color: white; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3); white-space: nowrap;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(13, 110, 253, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(13, 110, 253, 0.3)'">
+            <i class="bi bi-shield-lock me-2"></i>ورود ادمین
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Contact Hero -->
+    <div class="contact-hero">
+      <div class="container">
+        <h1 data-aos="fade-down">تماس با ما</h1>
+        <p data-aos="fade-up" data-aos-delay="100">ما اینجا هستیم تا به سوالات شما پاسخ دهیم</p>
+      </div>
+    </div>
+
+    <!-- Contact Info Cards -->
+    <section class="section" style="padding: 80px 0; background: #f8f9fa;">
+      <div class="container">
+        <div class="row gy-4 mb-5">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <h3>آدرس آزمایشگاه</h3>
+              <p style="line-height: 2;">
+                <strong>تهران، خیابان ولیعصر، پلاک 123</strong><br>
+                کد پستی: 1234567890<br>
+                <small style="color: #999;">دسترسی آسان با مترو و اتوبوس</small>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <h3>تماس تلفنی</h3>
+              <p style="line-height: 2;">
+                <strong>شماره تماس: 09226926189</strong><br>
+                پشتیبانی: 24/7<br>
+                <small style="color: #999;">پاسخگویی در تمام ساعات شبانه‌روز</small>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="info-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <h3>ایمیل</h3>
+              <p style="line-height: 2;">
+                <strong>saidiidanial@gmail.com</strong><br>
+                پاسخگویی: 24 ساعته<br>
+                <small style="color: #999;">ارسال ایمیل برای سوالات و درخواست‌ها</small>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ساعات کاری -->
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <div class="info-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-3 mb-md-0">
+                  <div class="icon-wrapper" style="display: inline-block;">
+                    <i class="bi bi-clock-fill"></i>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <h3 style="margin-bottom: 20px;">ساعات کاری آزمایشگاه</h3>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                        <span style="color: #666;"><strong>شنبه تا چهارشنبه:</strong></span>
+                        <span style="color: #0d6efd; font-weight: 600;">8:00 - 20:00</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                        <span style="color: #666;"><strong>پنج‌شنبه:</strong></span>
+                        <span style="color: #0d6efd; font-weight: 600;">8:00 - 14:00</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                        <span style="color: #666;"><strong>جمعه:</strong></span>
+                        <span style="color: #999;">تعطیل</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                        <span style="color: #666;"><strong>پشتیبانی آنلاین:</strong></span>
+                        <span style="color: #20c997; font-weight: 600;">24/7</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- راه‌های ارتباطی دیگر -->
+        <div class="row mt-4">
+          <div class="col-lg-12">
+            <div class="info-card" data-aos="fade-up" data-aos-delay="500">
+              <h3 style="text-align: center; margin-bottom: 30px;">راه‌های ارتباطی دیگر</h3>
+              <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                  <div style="padding: 20px;">
+                    <i class="bi bi-whatsapp" style="font-size: 48px; color: #20c997; margin-bottom: 15px;"></i>
+                    <h5 style="color: #2c3e50; margin-bottom: 10px;">واتساپ</h5>
+                    <p style="color: #666; font-size: 14px; margin: 0;">09226926189</p>
+                  </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                  <div style="padding: 20px;">
+                    <i class="bi bi-telegram" style="font-size: 48px; color: #0d6efd; margin-bottom: 15px;"></i>
+                    <h5 style="color: #2c3e50; margin-bottom: 10px;">تلگرام</h5>
+                    <p style="color: #666; font-size: 14px; margin: 0;">@azmayab_lab</p>
+                  </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                  <div style="padding: 20px;">
+                    <i class="bi bi-instagram" style="font-size: 48px; color: #e4405f; margin-bottom: 15px;"></i>
+                    <h5 style="color: #2c3e50; margin-bottom: 10px;">اینستاگرام</h5>
+                    <p style="color: #666; font-size: 14px; margin: 0;">@azmayab_lab</p>
+                  </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                  <div style="padding: 20px;">
+                    <i class="bi bi-chat-dots" style="font-size: 48px; color: #0d6efd; margin-bottom: 15px;"></i>
+                    <h5 style="color: #2c3e50; margin-bottom: 10px;">چت آنلاین</h5>
+                    <p style="color: #666; font-size: 14px; margin: 0;">پشتیبانی 24/7</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section" style="padding: 80px 0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="contact-form-wrapper" data-aos="fade-up">
+              <h2>فرم تماس با ما</h2>
+              <p style="text-align: center; color: #666; margin-bottom: 30px;">لطفا فرم زیر را تکمیل کنید تا در اسرع وقت با شما تماس بگیریم</p>
+              <form action="forms/contact.php" method="post" class="php-email-form">
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label class="form-label" style="color: #2c3e50; font-weight: 600; margin-bottom: 8px;">نام و نام خانوادگی *</label>
+                    <input type="text" name="name" class="form-control" placeholder="نام و نام خانوادگی خود را وارد کنید" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" style="color: #2c3e50; font-weight: 600; margin-bottom: 8px;">ایمیل *</label>
+                    <input type="email" class="form-control" name="email" placeholder="ایمیل خود را وارد کنید" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" style="color: #2c3e50; font-weight: 600; margin-bottom: 8px;">شماره تماس</label>
+                    <input type="tel" class="form-control" name="phone" placeholder="09123456789">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" style="color: #2c3e50; font-weight: 600; margin-bottom: 8px;">موضوع *</label>
+                    <select class="form-select" name="subject" required>
+                      <option value="">انتخاب موضوع</option>
+                      <option value="سوال عمومی">سوال عمومی</option>
+                      <option value="رزرو نوبت">رزرو نوبت</option>
+                      <option value="مشکل در سیستم">مشکل در سیستم</option>
+                      <option value="پیشنهاد">پیشنهاد</option>
+                      <option value="سایر">سایر</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label class="form-label" style="color: #2c3e50; font-weight: 600; margin-bottom: 8px;">پیام شما *</label>
+                    <textarea class="form-control" name="message" rows="6" placeholder="پیام خود را اینجا بنویسید..." required></textarea>
+                  </div>
+                  <div class="col-md-12 text-center">
+                    <div class="loading">در حال ارسال...</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">پیام شما با موفقیت ارسال شد. متشکریم!</div>
+                    <button type="submit" class="btn btn-submit">
+                      <i class="bi bi-send me-2"></i>ارسال پیام
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="padding: 80px 0; background: #f8f9fa;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2 style="color: #2c3e50; font-weight: 700; font-size: 32px; text-align: center; margin-bottom: 15px;">سوالات متداول</h2>
+          <p style="color: #666; font-size: 18px; text-align: center;">پاسخ به سوالات رایج شما</p>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-8 mx-auto">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item mb-3" style="border-radius: 15px; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="background: white; color: #2c3e50; font-weight: 600; border-radius: 15px;">
+                    چگونه می‌توانم نوبت بگیرم؟
+                  </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="color: #666; line-height: 1.8;">
+                    شما می‌توانید از طریق تماس تلفنی با شماره <strong>09226926189</strong> یا از طریق فرم تماس با ما در همین صفحه، درخواست نوبت خود را ثبت کنید. همچنین می‌توانید به صورت حضوری به آزمایشگاه مراجعه کنید.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item mb-3" style="border-radius: 15px; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="background: white; color: #2c3e50; font-weight: 600; border-radius: 15px;">
+                    نتایج آزمایش‌ها چه زمانی آماده می‌شود؟
+                  </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="color: #666; line-height: 1.8;">
+                    زمان آماده شدن نتایج بستگی به نوع آزمایش دارد. آزمایش‌های ساده معمولاً در همان روز و آزمایش‌های تخصصی ممکن است 2 تا 5 روز کاری زمان ببرد. نتایج از طریق پنل آنلاین بیمار در دسترس شما قرار می‌گیرد.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item mb-3" style="border-radius: 15px; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" data-aos="fade-up" data-aos-delay="300">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="background: white; color: #2c3e50; font-weight: 600; border-radius: 15px;">
+                    آیا نیاز به ناشتا بودن برای آزمایش دارم؟
+                  </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="color: #666; line-height: 1.8;">
+                    بستگی به نوع آزمایش دارد. برای آزمایش‌های قند خون، چربی و برخی آزمایش‌های دیگر نیاز به ناشتا بودن 8 تا 12 ساعته دارید. هنگام رزرو نوبت، کارشناسان ما شما را راهنمایی خواهند کرد.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item mb-3" style="border-radius: 15px; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" data-aos="fade-up" data-aos-delay="400">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="background: white; color: #2c3e50; font-weight: 600; border-radius: 15px;">
+                    چگونه می‌توانم نتایج آزمایش‌های قبلی خود را مشاهده کنم؟
+                  </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="color: #666; line-height: 1.8;">
+                    شما می‌توانید با ورود به <a href="patient-login.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">پنل بیمار</a> و وارد کردن شماره تلفن خود، به تمامی نتایج آزمایش‌های قبلی خود دسترسی داشته باشید. همچنین می‌توانید نتایج را دانلود و چاپ کنید.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item mb-3" style="border-radius: 15px; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" data-aos="fade-up" data-aos-delay="500">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" style="background: white; color: #2c3e50; font-weight: 600; border-radius: 15px;">
+                    آیا آزمایشگاه بیمه را می‌پذیرد؟
+                  </button>
+                </h2>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="color: #666; line-height: 1.8;">
+                    بله، آزمایشگاه آزمایاب با اکثر بیمه‌های درمانی همکاری دارد. برای اطلاع از جزئیات و لیست بیمه‌های طرف قرارداد، لطفاً با ما تماس بگیرید.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section class="section" style="padding: 0 0 80px;">
+      <div class="container">
+        <div class="map-wrapper" data-aos="fade-up">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.827853398546!2d51.38942931525876!3d35.68919728019429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00d8c8c8c8c8%3A0x8c8c8c8c8c8c8c8c!2sTehran%2C%20Iran!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width: 100%; height: 450px; border: none;"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- راهنمای دسترسی -->
+    <section class="section" style="padding: 80px 0; background: #f8f9fa;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2 style="color: #2c3e50; font-weight: 700; font-size: 32px;">راهنمای دسترسی</h2>
+          <p style="color: #666; font-size: 18px;">چگونه به آزمایشگاه آزمایاب برسید</p>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-card">
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 20px;">
+                <i class="bi bi-train-front me-2" style="color: #0d6efd;"></i>با مترو
+              </h4>
+              <p style="color: #666; line-height: 1.8;">
+                ایستگاه مترو ولیعصر - خط 1 (قرمز)<br>
+                از خروجی ولیعصر خارج شوید و 5 دقیقه پیاده‌روی کنید
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-card">
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 20px;">
+                <i class="bi bi-bus-front me-2" style="color: #0d6efd;"></i>با اتوبوس
+              </h4>
+              <p style="color: #666; line-height: 1.8;">
+                خطوط 101، 102، 103<br>
+                ایستگاه ولیعصر - پلاک 123
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="info-card">
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 20px;">
+                <i class="bi bi-car-front me-2" style="color: #0d6efd;"></i>با خودرو شخصی
+              </h4>
+              <p style="color: #666; line-height: 1.8;">
+                پارکینگ رایگان در اختیار مراجعین<br>
+                ظرفیت: 20 خودرو
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="info-card">
+              <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 20px;">
+                <i class="bi bi-taxi-front me-2" style="color: #0d6efd;"></i>با تاکسی
+              </h4>
+              <p style="color: #666; line-height: 1.8;">
+                آدرس: تهران، خیابان ولیعصر، پلاک 123<br>
+                آزمایشگاه آزمایاب
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; padding: 60px 0 20px; margin-top: 80px;">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center mb-3">
+            <h3 class="sitename mb-0" style="color: white; font-weight: bold;">آزمایاب</h3>
+          </a>
+          <p style="color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 20px;">
+            آزمایشگاه آزمایاب با بیش از یک دهه تجربه، ارائه‌دهنده خدمات آزمایشگاهی با کیفیت و دقیق است. ما با بهره‌گیری از جدیدترین تجهیزات و تکنولوژی‌های روز دنیا، در خدمت سلامت شما هستیم.
+          </p>
+          <div class="footer-contact pt-3">
+            <p style="margin-bottom: 8px;"><i class="bi bi-geo-alt-fill me-2" style="color: #0d6efd;"></i> تهران، خیابان ولیعصر، پلاک 123</p>
+            <p style="margin-bottom: 8px;"><i class="bi bi-telephone-fill me-2" style="color: #0d6efd;"></i> <strong>09226926189</strong></p>
+            <p style="margin-bottom: 15px;"><i class="bi bi-envelope-fill me-2" style="color: #0d6efd;"></i> saidiidanial@gmail.com</p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none; transition: all 0.3s;"><i class="bi bi-instagram"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none; transition: all 0.3s;"><i class="bi bi-telegram"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none; transition: all 0.3s;"><i class="bi bi-whatsapp"></i></a>
+            <a href="#" style="background: rgba(255,255,255,0.1); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 10px; text-decoration: none; transition: all 0.3s;"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4 style="color: white; font-weight: bold; margin-bottom: 20px; font-size: 18px;">دسترسی سریع</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;"><a href="index.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> صفحه اصلی</a></li>
+            <li style="margin-bottom: 10px;"><a href="about.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> درباره ما</a></li>
+            <li style="margin-bottom: 10px;"><a href="patient-login.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> ورود بیمار</a></li>
+            <li style="margin-bottom: 10px;"><a href="admin-login.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> ورود ادمین</a></li>
+            <li style="margin-bottom: 10px;"><a href="contact.html" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> تماس با ما</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4 style="color: white; font-weight: bold; margin-bottom: 20px; font-size: 18px;">خدمات ما</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> آزمایش خون کامل</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> آزمایش ادرار</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> آزمایش ژنتیکی</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> آزمایش میکروبی</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s; display: flex; align-items: center;"><i class="bi bi-chevron-left me-2" style="font-size: 12px;"></i> غربالگری سلامت</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4 style="color: white; font-weight: bold; margin-bottom: 20px; font-size: 18px;">ساعات کاری</h4>
+          <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.8);">
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>شنبه تا چهارشنبه:</span>
+              <strong style="color: #0d6efd;">8:00 - 20:00</strong>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>پنج‌شنبه:</span>
+              <strong style="color: #0d6efd;">8:00 - 14:00</strong>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>جمعه:</span>
+              <strong style="color: #0d6efd;">تعطیل</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-5 pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+      <p style="color: rgba(255,255,255,0.7); margin: 0; font-size: 14px;">
+        © 1403 کلیه حقوق محفوظ است | <strong style="color: #0d6efd;">آزمایاب</strong>
+      </p>
+      <p style="color: rgba(255,255,255,0.6); margin-top: 10px; font-size: 12px;">
+        طراحی و توسعه با ❤️ برای سلامت شما
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files - Defer for faster loading -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- Fallback برای AOS -->
+  <script>
+    // بررسی لود شدن AOS و نمایش محتوا
+    function checkAOS() {
+      // اگر AOS وجود ندارد یا لود نشده
+      if (typeof AOS === 'undefined') {
+        document.documentElement.classList.add('aos-fallback');
+        // نمایش همه عناصر با data-aos
+        document.querySelectorAll('[data-aos]').forEach(function(el) {
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+          el.style.transform = 'none';
+        });
+        return;
+      }
+      
+      // اگر AOS وجود دارد اما بعد از 3 ثانیه هنوز انیمیت نشده
+      setTimeout(function() {
+        document.querySelectorAll('[data-aos]:not(.aos-animate)').forEach(function(el) {
+          // اگر عنصری هنوز انیمیت نشده، آن را نمایش بده
+          if (el.offsetParent === null || window.getComputedStyle(el).opacity === '0') {
+            el.style.opacity = '1';
+            el.style.visibility = 'visible';
+            el.style.transform = 'none';
+            el.classList.add('aos-animate');
+          }
+        });
+      }, 3000);
+    }
+    
+    // اجرا بعد از لود کامل صفحه
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkAOS);
+    } else {
+      checkAOS();
+    }
+    
+    // همچنین بعد از لود کامل window
+    window.addEventListener('load', function() {
+      setTimeout(checkAOS, 1000);
+    });
+  </script>
+
+</body>
+</html>
+

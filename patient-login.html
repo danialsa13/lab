@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود بیمار - آزمایاب</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/header-custom.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+            min-height: 100vh;
+            font-family: 'Vazir', 'Tahoma', sans-serif;
+            padding-top: 125px;
+        }
+        .login-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .login-header h2 {
+            color: #0d6efd;
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+        .form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+        }
+        .btn-login {
+            background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            color: white;
+            font-weight: bold;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        .btn-login:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+        .btn-send-code {
+            background: #28a745;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            padding: 12px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+        .code-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="header sticky-top" style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.1); width: 100%; position: fixed; top: 0; z-index: 1000;">
+        <div class="branding d-flex align-items-center" style="min-height: 80px; padding: 15px 0; background: white;">
+            <div class="container-fluid position-relative d-flex align-items-center justify-content-between" style="padding: 0 30px; max-width: 100%;">
+                <a href="index.html" class="logo d-flex align-items-center me-auto" style="text-decoration: none;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-heart-pulse-fill" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <div>
+                            <h1 class="sitename mb-0" style="font-size: 28px; font-weight: 700; color: #2c3e50; margin: 0;">آزمایاب</h1>
+                            <p style="font-size: 12px; color: #0d6efd; margin: 0;">آزمایشگاه تخصصی</p>
+                        </div>
+                    </div>
+                </a>
+                <nav id="navmenu" class="navmenu" style="flex: 1; display: flex; justify-content: center;">
+                    <ul>
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="patient-login.html" class="active">ورود بیمار</a></li>
+                        <li><a href="admin-login.html">ورود ادمین</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                    </ul>
+                </nav>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <a class="cta-btn d-none d-sm-block" href="admin-login.html" style="background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); color: white; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3); white-space: nowrap;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(13, 110, 253, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(13, 110, 253, 0.3)'">
+                        <i class="bi bi-shield-lock me-2"></i>ورود ادمین
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div style="display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 125px);">
+    <div class="login-card">
+        <div class="login-header">
+            <i class="bi bi-person-circle" style="font-size: 48px; color: #0d6efd;"></i>
+            <h2 class="mt-3">ورود بیمار</h2>
+            <p class="text-muted">لطفا شماره تماس خود را وارد کنید</p>
+        </div>
+        
+        <!-- بخش شماره تماس -->
+        <div id="phoneSection">
+            <form id="phoneForm">
+                <div class="mb-3">
+                    <label for="phone" class="form-label">شماره تماس</label>
+                    <input type="text" class="form-control" id="phone" placeholder="09123456789" required>
+                </div>
+                <button type="submit" class="btn btn-send-code">
+                    <i class="bi bi-send"></i> ارسال کد تایید
+                </button>
+            </form>
+        </div>
+
+        <!-- بخش کد تایید -->
+        <div id="codeSection" class="code-section">
+            <form id="codeForm">
+                <div class="mb-3">
+                    <label for="code" class="form-label">کد تایید</label>
+                    <input type="text" class="form-control text-center" id="code" placeholder="1234" maxlength="4" required>
+                    <small class="text-muted">کد به شماره شما ارسال شد</small>
+                </div>
+                <button type="submit" class="btn btn-login">
+                    <i class="bi bi-check-circle"></i> تایید و ورود
+                </button>
+            </form>
+            <button type="button" class="btn btn-link w-100 mt-2" onclick="resetForm()">
+                تغییر شماره تماس
+            </button>
+        </div>
+
+        <div class="back-link">
+            <a href="index.html"><i class="bi bi-arrow-right"></i> بازگشت به صفحه اصلی</a>
+        </div>
+    </div>
+    </div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        let currentPhone = '';
+
+        // ارسال کد تایید
+        document.getElementById('phoneForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const phone = document.getElementById('phone').value.trim();
+            
+            // بررسی وجود بیمار
+            const patient = AppData.patients.findByPhone(phone);
+            if (!patient) {
+                showMessage('شماره تماس شما در سیستم ثبت نشده است!', 'error');
+                return;
+            }
+
+            currentPhone = phone;
+            const code = AppData.verificationCodes.generate(phone);
+            
+            // نمایش کد در کنسول (در پروژه واقعی باید از طریق SMS ارسال شود)
+            console.log('کد تایید:', code);
+            alert(`کد تایید شما: ${code}\n(در پروژه واقعی این کد از طریق SMS ارسال می‌شود)`);
+
+            // نمایش بخش کد
+            document.getElementById('phoneSection').style.display = 'none';
+            document.getElementById('codeSection').style.display = 'block';
+        });
+
+        // تایید کد و ورود
+        document.getElementById('codeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const code = document.getElementById('code').value.trim();
+
+            if (AppData.verificationCodes.verify(currentPhone, code)) {
+                const patient = AppData.patients.findByPhone(currentPhone);
+                AppData.session.set('patient', {
+                    phone: currentPhone,
+                    name: patient.name,
+                    id: patient.id
+                });
+                showMessage('ورود موفقیت‌آمیز بود!', 'success');
+                setTimeout(() => {
+                    window.location.href = 'patient-dashboard.html';
+                }, 1000);
+            } else {
+                showMessage('کد تایید اشتباه است یا منقضی شده!', 'error');
+            }
+        });
+
+        // بازگشت به بخش شماره تماس
+        function resetForm() {
+            document.getElementById('phoneSection').style.display = 'block';
+            document.getElementById('codeSection').style.display = 'none';
+            document.getElementById('phone').value = '';
+            document.getElementById('code').value = '';
+            currentPhone = '';
+        }
+    </script>
+</body>
+</html>
+

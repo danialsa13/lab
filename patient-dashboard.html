@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>داشبورد بیمار - آزمایاب</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/header-custom.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Vazir', 'Tahoma', sans-serif;
+            padding-top: 125px;
+        }
+        .page-header {
+            background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            margin-top: -125px;
+        }
+        .test-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .test-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+        .test-date {
+            color: #666;
+            font-size: 14px;
+        }
+        .btn-view {
+            background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+        .empty-state i {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        .test-result-modal .modal-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .test-result-modal .modal-body iframe {
+            width: 100%;
+            min-height: 500px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="header sticky-top" style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.1); width: 100%; position: fixed; top: 0; z-index: 1000;">
+        <div class="branding d-flex align-items-center" style="min-height: 80px; padding: 15px 0; background: white;">
+            <div class="container-fluid position-relative d-flex align-items-center justify-content-between" style="padding: 0 30px; max-width: 100%;">
+                <a href="index.html" class="logo d-flex align-items-center me-auto" style="text-decoration: none;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-heart-pulse-fill" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <div>
+                            <h1 class="sitename mb-0" style="font-size: 28px; font-weight: 700; color: #2c3e50; margin: 0;">آزمایاب</h1>
+                            <p style="font-size: 12px; color: #0d6efd; margin: 0;">آزمایشگاه تخصصی</p>
+                        </div>
+                    </div>
+                </a>
+                <nav id="navmenu" class="navmenu" style="flex: 1; display: flex; justify-content: center;">
+                    <ul>
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="patient-login.html" class="active">ورود بیمار</a></li>
+                        <li><a href="admin-login.html">ورود ادمین</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                    </ul>
+                </nav>
+                <div class="d-flex align-items-center gap-3" style="white-space: nowrap;">
+                    <span id="patientInfoHeader" style="color: #2c3e50; font-weight: 500; font-size: 14px;"></span>
+                    <button class="btn btn-sm btn-outline-danger" onclick="logout()" style="padding: 8px 15px;">
+                        <i class="bi bi-box-arrow-right"></i> خروج
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="page-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <h2><i class="bi bi-person-circle"></i> داشبورد بیمار</h2>
+                    <p class="mb-0" id="patientInfo">خوش آمدید</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="mb-4"><i class="bi bi-file-earmark-medical"></i> آزمایش‌های من</h3>
+                <div id="testsContainer">
+                    <!-- لیست آزمایش‌ها اینجا نمایش داده می‌شود -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal نمایش نتیجه آزمایش -->
+    <div class="modal fade test-result-modal" id="testResultModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="testResultModalTitle">نتیجه آزمایش</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="testResultModalBody">
+                    <!-- محتوای آزمایش اینجا نمایش داده می‌شود -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+                    <a id="downloadTestBtn" href="#" download class="btn btn-primary">
+                        <i class="bi bi-download"></i> دانلود
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        // بررسی لاگین بودن بیمار
+        if (!checkAuth('patient')) {
+            // redirect handled in checkAuth
+        }
+
+        // بارگذاری اطلاعات بیمار و آزمایش‌ها
+        function loadDashboard() {
+            const session = AppData.session.get();
+            if (!session || session.userType !== 'patient') {
+                window.location.href = 'patient-login.html';
+                return;
+            }
+
+            const patient = session.data;
+            document.getElementById('patientInfo').textContent = `${patient.name} - ${patient.phone}`;
+
+            // بارگذاری آزمایش‌های بیمار
+            const tests = AppData.tests.findByPatientPhone(patient.phone);
+            const container = document.getElementById('testsContainer');
+
+            if (tests.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="bi bi-inbox"></i>
+                        <h4>هیچ آزمایشی ثبت نشده است</h4>
+                        <p>هنوز آزمایشی برای شما ثبت نشده است.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = tests.map(test => `
+                <div class="test-card">
+                    <div class="test-header">
+                        <div>
+                            <div class="test-title">${test.testName}</div>
+                            <div class="test-date">
+                                <i class="bi bi-calendar"></i> ${new Date(test.createdAt).toLocaleDateString('fa-IR')}
+                            </div>
+                        </div>
+                        <button onclick="viewTestResult('${test.id}')" class="btn btn-view">
+                            <i class="bi bi-eye"></i> مشاهده نتیجه
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // نمایش نتیجه آزمایش
+        function viewTestResult(testId) {
+            const test = AppData.tests.findById(testId);
+            if (!test) {
+                showMessage('آزمایش یافت نشد!', 'error');
+                return;
+            }
+
+            const modal = new bootstrap.Modal(document.getElementById('testResultModal'));
+            document.getElementById('testResultModalTitle').textContent = test.testName;
+            document.getElementById('downloadTestBtn').href = test.fileUrl;
+            document.getElementById('downloadTestBtn').download = test.fileName || 'test-result';
+
+            const modalBody = document.getElementById('testResultModalBody');
+            
+            // بررسی نوع فایل
+            if (test.fileType && test.fileType.startsWith('image/')) {
+                modalBody.innerHTML = `<img src="${test.fileUrl}" alt="نتیجه آزمایش" class="img-fluid">`;
+            } else if (test.fileType === 'application/pdf') {
+                modalBody.innerHTML = `<iframe src="${test.fileUrl}" class="w-100"></iframe>`;
+            } else {
+                modalBody.innerHTML = `
+                    <div class="text-center p-4">
+                        <i class="bi bi-file-earmark" style="font-size: 64px; color: #0d6efd;"></i>
+                        <p class="mt-3">برای مشاهده فایل، روی دکمه دانلود کلیک کنید</p>
+                        <a href="${test.fileUrl}" target="_blank" class="btn btn-primary">
+                            <i class="bi bi-box-arrow-up-right"></i> مشاهده در تب جدید
+                        </a>
+                    </div>
+                `;
+            }
+
+            modal.show();
+        }
+
+        // خروج از سیستم
+        function logout() {
+            AppData.session.clear();
+            window.location.href = 'patient-login.html';
+        }
+
+        // بارگذاری اولیه
+        loadDashboard();
+    </script>
+</body>
+</html>
+

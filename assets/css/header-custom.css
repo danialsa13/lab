@@ -1,0 +1,311 @@
+/* استایل‌های سفارشی هدر */
+#header {
+  background: white !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1) !important;
+  transition: all 0.3s;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#header .container-fluid {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+#header .topbar .container-fluid {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+#header .topbar {
+  background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%) !important;
+  height: 45px !important;
+}
+
+#header .topbar .contact-info a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.3s;
+}
+
+#header .topbar .contact-info a:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+#header .branding {
+  min-height: 80px !important;
+  padding: 15px 0 !important;
+  background: white !important;
+}
+
+#header .logo {
+  text-decoration: none;
+}
+
+#header .logo .sitename {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* استایل منوی ناوبری - طراحی مدرن و تمیز - افقی */
+#header .navmenu {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#header .navmenu ul {
+  display: flex !important;
+  flex-direction: row !important;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+#header .navmenu ul li {
+  position: relative;
+  display: inline-block;
+}
+
+#header .navmenu ul li a {
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* افکت پس‌زمینه گرادیان برای hover */
+#header .navmenu ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+#header .navmenu ul li a:hover::before {
+  opacity: 1;
+}
+
+/* افکت hover - تغییر رنگ و سایه */
+#header .navmenu ul li a:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.35);
+}
+
+/* استایل منوی فعال */
+#header .navmenu ul li a.active {
+  background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+  font-weight: 600;
+}
+
+#header .navmenu ul li a.active::before {
+  opacity: 1;
+}
+
+/* افکت موج برای منو */
+#header .navmenu ul li a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+#header .navmenu ul li a:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* جلوگیری از نمایش افکت موج در منوی فعال */
+#header .navmenu ul li a.active::after {
+  display: none;
+}
+
+#header .cta-btn {
+  background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+  border: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+#header .cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+  color: white;
+}
+
+/* استایل برای اسکرول */
+.scrolled #header {
+  box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+}
+
+.scrolled #header .topbar {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* استایل موبایل - فقط در موبایل منو عمودی می‌شود */
+@media (max-width: 1199px) {
+  #header .navmenu ul {
+    flex-direction: column !important;
+    gap: 5px;
+    padding: 10px;
+  }
+  
+  #header .navmenu ul li {
+    width: 100%;
+    display: block;
+  }
+  
+  #header .navmenu ul li a {
+    padding: 15px 20px;
+    border-radius: 12px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  #header .navmenu ul li a::after {
+    display: none;
+  }
+  
+  #header .navmenu ul li a:hover {
+    transform: translateX(5px);
+  }
+}
+
+/* اطمینان از افقی بودن منو در دسکتاپ */
+@media (min-width: 1200px) {
+  #header .navmenu {
+    display: flex !important;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  #header .navmenu ul {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+  }
+  
+  #header .navmenu ul li {
+    display: inline-block !important;
+    vertical-align: middle;
+    float: none !important;
+  }
+  
+  #header .navmenu ul li a {
+    display: inline-flex !important;
+  }
+  
+  #header .branding > div {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* نمایش منو در همه اندازه‌ها */
+#header .navmenu {
+  display: flex !important;
+}
+
+@media (max-width: 1199px) {
+  #header .navmenu {
+    display: flex !important;
+  }
+}
+
+/* Override استایل‌های اصلی که ممکن است منو را عمودی کنند */
+#header .navmenu > ul {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+@media (min-width: 1200px) {
+  #header .navmenu > ul > li {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 1199px) {
+  #header .branding > div {
+    flex-wrap: wrap;
+    padding: 0 15px !important;
+  }
+  
+  #header .topbar .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  #header .navmenu {
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  #header .navmenu ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  #header .cta-btn {
+    order: 2;
+  }
+  
+  #header .logo {
+    order: 1;
+  }
+}
+
