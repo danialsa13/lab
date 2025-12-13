@@ -5,17 +5,13 @@
   display: none !important;
 }
 
-/* منوی پایین صفحه - مخفی در دسکتاپ */
+/* منوی پایین صفحه - همیشه مخفی */
 .mobile-bottom-nav {
   display: none !important;
 }
 
-/* نمایش منوی پایین صفحه در موبایل */
+/* مخفی کردن دکمه mobile menu toggle */
 @media (max-width: 1199px) {
-  .mobile-bottom-nav {
-    display: flex !important;
-  }
-  
   .mobile-nav-toggle {
     display: none !important;
   }
@@ -465,8 +461,62 @@
     flex: 1 !important;
   }
   
-  /* منوی ناوبری در موبایل - مخفی از header */
+  /* منوی ناوبری در موبایل - همیشه قابل مشاهده */
   #header .navmenu {
+    display: flex !important;
+    flex: 1 !important;
+    justify-content: center !important;
+  }
+  
+  #header .navmenu ul {
+    display: flex !important;
+    flex-direction: row !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 5px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  #header .navmenu ul li {
+    flex: 0 0 auto !important;
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  #header .navmenu ul li a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 14px !important;
+    color: #2c3e50 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    border-radius: 20px !important;
+    transition: all 0.3s ease !important;
+    background: transparent !important;
+    white-space: nowrap !important;
+    border: 1px solid transparent !important;
+  }
+  
+  #header .navmenu ul li a:hover {
+    background: rgba(13, 110, 253, 0.1) !important;
+    color: #0d6efd !important;
+  }
+  
+  #header .navmenu ul li a.active {
+    background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(13, 110, 253, 0.3) !important;
+  }
+  
+  #header .navmenu ul li a::before,
+  #header .navmenu ul li a::after {
     display: none !important;
   }
   
@@ -478,7 +528,7 @@
   /* فاصله بین header و محتوا */
   main.main {
     padding-top: 0 !important;
-    padding-bottom: 70px !important; /* فاصله برای bottom navigation */
+    padding-bottom: 0 !important;
   }
   
   section.section {
