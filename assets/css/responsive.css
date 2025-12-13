@@ -17,31 +17,48 @@
   /* Hero Section */
   #hero {
     min-height: auto !important;
-    padding: 60px 0 !important;
-    margin-top: 60px !important;
+    padding: 30px 0 40px 0 !important;
+    margin-top: 0 !important;
+    display: block !important;
+  }
+  
+  #hero .container {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
   }
   
   #hero h1 {
     font-size: 28px !important;
     line-height: 1.3 !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 20px !important;
+    margin-top: 15px !important;
+    padding-top: 0 !important;
   }
   
   #hero p {
     font-size: 16px !important;
     line-height: 1.6 !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 25px !important;
+    margin-top: 0 !important;
   }
   
   .hero-buttons {
     flex-direction: column !important;
-    gap: 15px !important;
+    gap: 12px !important;
+    margin-top: 15px !important;
+    margin-bottom: 25px !important;
   }
   
   .hero-buttons .btn {
     width: 100% !important;
-    padding: 12px 20px !important;
-    font-size: 14px !important;
+    padding: 14px 24px !important;
+    font-size: 15px !important;
+    margin: 0 !important;
+  }
+  
+  .hero-image-wrapper {
+    margin-top: 30px !important;
+    margin-bottom: 20px !important;
   }
   
   .hero-image-wrapper i {
@@ -104,6 +121,11 @@
   /* Sections */
   section.section {
     padding: 40px 0 !important;
+    margin: 0 !important;
+  }
+  
+  section.section + section.section {
+    margin-top: 0 !important;
   }
   
   /* Cards */
@@ -189,7 +211,27 @@
   /* Header */
   #header .branding {
     min-height: auto !important;
-    padding: 8px 0 !important;
+    padding: 10px 0 6px 0 !important;
+  }
+  
+  #header .navmenu {
+    margin-top: 10px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  /* Hero Section در موبایل کوچک */
+  #hero {
+    padding: 30px 0 40px 0 !important;
+  }
+  
+  #hero h1 {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .hero-buttons {
+    margin-top: 8px !important;
+    margin-bottom: 25px !important;
   }
   
   #header .branding > div {
@@ -356,16 +398,18 @@
     right: 0 !important;
     width: 100% !important;
     z-index: 1000 !important;
+    background: white !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
   }
   
   #header .branding {
     min-height: auto !important;
-    padding: 10px 0 !important;
+    padding: 12px 0 8px 0 !important;
   }
   
   #header .branding > div {
     padding: 0 15px !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
     gap: 10px !important;
   }
   
@@ -421,7 +465,34 @@
     margin: 0 !important;
     width: 100% !important;
     order: 3 !important;
-    margin-top: 10px !important;
+    margin-top: 12px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  /* محاسبه ارتفاع header برای margin-top */
+  #header {
+    min-height: auto !important;
+  }
+  
+  /* فاصله بین header و محتوا */
+  main.main {
+    padding-top: 0 !important;
+  }
+  
+  section.section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  section.section:first-of-type {
+    padding-top: 25px !important;
+  }
+  
+  section.section + section.section {
+    margin-top: 0 !important;
+    padding-top: 40px !important;
   }
   
   #header .navmenu ul {
@@ -521,8 +592,23 @@
   #header .navmenu {
     order: 3 !important;
     width: 100% !important;
-    margin-top: 10px !important;
+    margin-top: 12px !important;
+    margin-bottom: 8px !important;
     padding: 0 5px !important;
+  }
+  
+  /* فاصله بین header و محتوا */
+  main.main {
+    padding-top: 0 !important;
+  }
+  
+  section.section {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  
+  section.section:first-of-type {
+    padding-top: 20px !important;
   }
 }
 
