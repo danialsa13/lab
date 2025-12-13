@@ -682,27 +682,22 @@
   /* بهبود layout header در موبایل */
   #header .branding > div {
     flex-wrap: wrap !important;
-  }
-  
-  #header .branding > div > div:last-child {
-    display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
-    flex-shrink: 0 !important;
-    width: 100% !important;
-    order: 2 !important;
   }
   
   #header .logo {
-    order: 1 !important;
+    flex: 0 0 auto !important;
+    margin-left: 0 !important;
   }
   
   #header .navmenu {
-    order: 3 !important;
-    width: 100% !important;
-    margin-top: 12px !important;
-    margin-bottom: 8px !important;
-    padding: 0 5px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    margin: 0 10px !important;
+  }
+  
+  #header .cta-btn {
+    display: none !important;
   }
   
   /* فاصله بین header و محتوا */
