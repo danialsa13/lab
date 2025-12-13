@@ -754,6 +754,15 @@
     padding: 6px 10px !important;
     font-size: 11px !important;
     white-space: nowrap !important;
+    min-width: auto !important;
+  }
+  
+  /* در موبایل اگر منو زیاد بود، scroll شود */
+  @media (max-width: 576px) {
+    #header .navmenu ul li a {
+      padding: 5px 8px !important;
+      font-size: 10px !important;
+    }
   }
   
   #header .cta-btn {
