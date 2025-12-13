@@ -17,6 +17,36 @@
   }
 }
 
+/* مخفی کردن هدر در صفحات درباره ما و تماس با ما در موبایل */
+@media (max-width: 768px) {
+  body.about-page #header,
+  body.contact-page #header {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  body.about-page .about-hero,
+  body.contact-page .contact-hero {
+    margin-top: 0 !important;
+    padding-top: 50px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  body.about-page main.main,
+  body.contact-page main.main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+  
+  body.about-page section.section:first-of-type,
+  body.contact-page section.section:first-of-type {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
 /* موبایل - تا 768px */
 @media (max-width: 768px) {
   /* Hero Section */
