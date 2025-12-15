@@ -26,13 +26,14 @@
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const mobileNavToogle = () => {
+    if (!mobileNavToggleBtn) return; // guard for pages without the toggle
+    document.body.classList.toggle('mobile-nav-active');
+    mobileNavToggleBtn.classList.toggle('bi-list');
+    mobileNavToggleBtn.classList.toggle('bi-x');
+  };
 
   if (mobileNavToggleBtn) {
-    function mobileNavToogle() {
-      document.querySelector('body').classList.toggle('mobile-nav-active');
-      mobileNavToggleBtn.classList.toggle('bi-list');
-      mobileNavToggleBtn.classList.toggle('bi-x');
-    }
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
 
@@ -41,7 +42,7 @@
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
+      if (document.body.classList.contains('mobile-nav-active')) {
         mobileNavToogle();
       }
     });
