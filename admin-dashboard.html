@@ -13,16 +13,16 @@
         body {
             background-color: #f5f7fa;
             font-family: 'Vazir', 'Tahoma', sans-serif;
-            padding-top: 125px;
+            padding-top: 20px;
         }
         .sidebar {
             background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
-            min-height: calc(100vh - 125px);
+            min-height: calc(100vh - 20px);
             color: white;
             padding: 20px;
             position: fixed;
             width: 250px;
-            top: 125px;
+            top: 20px;
         }
         .sidebar-header {
             text-align: center;
@@ -79,7 +79,7 @@
         }
     </style>
 </head>
-<body>
+<body class="admin-dashboard">
     <header id="header" class="header sticky-top" style="background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.1); width: 100%; position: fixed; top: 0; z-index: 1000;">
         <div class="branding d-flex align-items-center" style="min-height: 80px; padding: 15px 0; background: white;">
             <div class="container-fluid position-relative d-flex align-items-center justify-content-between" style="padding: 0 30px; max-width: 100%;">
@@ -129,6 +129,13 @@
     </div>
 
     <div class="main-content">
+        <!-- Mobile topbar: sidebar toggle -->
+        <div class="mobile-topbar d-xl-none d-block mb-3">
+            <button id="mobileSidebarToggle" class="btn btn-outline-primary">
+                <i class="bi bi-list"></i>
+            </button>
+            <span class="me-2 fw-bold">داشبورد ادمین</span>
+        </div>
         <!-- بخش افزودن بیمار -->
         <div id="patients-section" class="section">
             <div class="card">
@@ -410,4 +417,29 @@
 
 </body>
 </html>
+
+<style>
+/* Inline fallback styles for mobile sidebar toggle (kept minimal) */
+.mobile-topbar { display: flex; align-items: center; gap: 8px; }
+.mobile-topbar .btn { padding: 8px 10px; }
+.mobile-sidebar-overlay { display: none; }
+body.mobile-sidebar-open .mobile-sidebar-overlay { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 1090; }
+</style>
+
+<script>
+// Mobile sidebar toggle
+(function(){
+    var toggle = document.getElementById('mobileSidebarToggle');
+    if(!toggle) return;
+    var overlay = document.createElement('div');
+    overlay.className = 'mobile-sidebar-overlay';
+    document.body.appendChild(overlay);
+    toggle.addEventListener('click', function(){
+        document.body.classList.toggle('mobile-sidebar-open');
+    });
+    overlay.addEventListener('click', function(){
+        document.body.classList.remove('mobile-sidebar-open');
+    });
+})();
+</script>
 
