@@ -107,13 +107,25 @@
                     <a class="cta-btn d-none d-sm-block" href="admin-login.html" style="background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%); color: white; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3); white-space: nowrap;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(13, 110, 253, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(13, 110, 253, 0.3)'">
                         <i class="bi bi-shield-lock me-2"></i>ورود ادمین
                     </a>
-                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                    <!-- Mobile menu button -->
+                    <button id="adminMobileMenuBtn" class="btn btn-outline-secondary d-xl-none" style="border: 2px solid #0d6efd; color: #0d6efd; padding: 8px 12px;">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+                <!-- Mobile menu for admin dashboard -->
+                <div id="adminMobileMenu" class="d-xl-none" style="display: none; border-top: 1px solid #e0e0e0; margin-top: 15px; padding-top: 15px;">
+                    <ul class="sidebar-menu" style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;"><a href="#" class="active" onclick="showSection('patients'); return false;" style="color: #0d6efd; text-decoration: none; padding: 10px 0; display: block;"><i class="bi bi-people"></i> مدیریت بیماران</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#" onclick="showSection('tests'); return false;" style="color: #0d6efd; text-decoration: none; padding: 10px 0; display: block;"><i class="bi bi-file-earmark-medical"></i> افزودن آزمایش</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#" onclick="showSection('all-tests'); return false;" style="color: #0d6efd; text-decoration: none; padding: 10px 0; display: block;"><i class="bi bi-list-check"></i> لیست آزمایش‌ها</a></li>
+                        <li style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;"><button class="btn btn-outline-danger w-100" onclick="logout()" style="font-size: 14px;"><i class="bi bi-box-arrow-right"></i> خروج</button></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </header>
     
-    <div class="sidebar">
+    <div class="sidebar d-none d-xl-block">
         <div class="sidebar-header">
             <h4>آزمایاب</h4>
             <p class="mb-0">داشبورد ادمین</p>
@@ -249,6 +261,24 @@
         if (!checkAuth('admin')) {
             // redirect handled in checkAuth
         }
+
+        // Toggle mobile menu
+        document.getElementById('adminMobileMenuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('adminMobileMenu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+
+        // Close menu when clicking on menu items
+        const menuLinks = document.querySelectorAll('#adminMobileMenu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('adminMobileMenu').style.display = 'none';
+            });
+        });
 
         // نمایش بخش‌های مختلف
         function showSection(section) {
